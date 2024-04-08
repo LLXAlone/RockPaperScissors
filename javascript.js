@@ -9,18 +9,18 @@ function playRound(playerSelection, computerSelection) {
 
     if (computerSelection == "Rock") {
         if (playerSelection === "rock") {
-            let match = "The computer chooses " + computerSelection + ". You tied!"
+            let match = "The computer chooses " + computerSelection + ". You chose " + playerSelection +  ". You tied!"
             return match;
         }
 
         else if (playerSelection === "paper") {
-            let match = ("The computer chooses " + computerSelection + ". You win!")
+            let match = ("The computer chooses " + computerSelection + ". You chose " + playerSelection +  ". You win!")
             win += 1;
             return match;
         }
 
         else if (playerSelection === "scissors") {
-            let match = ("The computer chooses " + computerSelection + ". You lost!")
+            let match = ("The computer chooses " + computerSelection + ". You chose " + playerSelection +  ". You lost!")
             lose += 1;
             return match;
         }
@@ -33,18 +33,18 @@ function playRound(playerSelection, computerSelection) {
 
     else if (computerSelection === "Paper"){
         if (playerSelection === "rock") {
-            let match = "The computer chooses " + computerSelection + ". You lost!"
+            let match = "The computer chooses " + computerSelection + ". You chose " + playerSelection +  ". You lost!"
             lose += 1;
             return match;
         }
 
         else if (playerSelection === "paper") {
-            let match = ("The computer chooses " + computerSelection + ". You tied!")
+            let match = ("The computer chooses " + computerSelection + ". You chose " + playerSelection +  ". You tied!")
             return match;
         }
 
         else if (playerSelection === "scissors") {
-            let match = ("The computer chooses " + computerSelection + ". You win!")
+            let match = ("The computer chooses " + computerSelection + ". You chose " + playerSelection +  ". You win!")
             win += 1;
             return match;
         }
@@ -57,19 +57,19 @@ function playRound(playerSelection, computerSelection) {
 
     else if (computerSelection === "Scissors"){
         if (playerSelection === "rock") {
-            let match = "The computer chooses " + computerSelection + ". You win!"
+            let match = "The computer chooses " + computerSelection + ". You chose " + playerSelection + ". You win!"
             win += 1;
             return match;
         }
 
         else if (playerSelection === "paper") {
-            let match = ("The computer chooses " + computerSelection + ". You lost!")
+            let match = ("The computer chooses " + computerSelection + ". You chose " + playerSelection +  ". You lost!")
             lose += 1;
             return match;
         }
 
         else if (playerSelection === "scissors") {
-            let match = ("The computer chooses " + computerSelection + ". You tied!")
+            let match = ("The computer chooses " + computerSelection + ". You chose " + playerSelection +  ". You tied!")
             return match;
         }
 
