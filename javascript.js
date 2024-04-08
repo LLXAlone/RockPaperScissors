@@ -1,8 +1,3 @@
-const initialSelection = prompt("Rock, paper, or scissors?", "");
-const playerSelection = initialSelection.toLowerCase();
-const computerSelection = getComputerChoice();
-
-
 function getComputerChoice() {
 
     let array = ["Rock", "Paper", "Scissors"];
@@ -11,6 +6,7 @@ function getComputerChoice() {
 }   
 
 function playRound(playerSelection, computerSelection) {
+
     if (computerSelection == "Rock") {
         if (playerSelection === "rock") {
             let match = "The computer chooses " + computerSelection + ". You tied!"
@@ -19,11 +15,13 @@ function playRound(playerSelection, computerSelection) {
 
         else if (playerSelection === "paper") {
             let match = ("The computer chooses " + computerSelection + ". You win!")
+            win += 1;
             return match;
         }
 
         else if (playerSelection === "scissors") {
             let match = ("The computer chooses " + computerSelection + ". You lost!")
+            lose += 1;
             return match;
         }
 
@@ -36,6 +34,7 @@ function playRound(playerSelection, computerSelection) {
     else if (computerSelection === "Paper"){
         if (playerSelection === "rock") {
             let match = "The computer chooses " + computerSelection + ". You lost!"
+            lose += 1;
             return match;
         }
 
@@ -46,6 +45,7 @@ function playRound(playerSelection, computerSelection) {
 
         else if (playerSelection === "scissors") {
             let match = ("The computer chooses " + computerSelection + ". You win!")
+            win += 1;
             return match;
         }
 
@@ -58,11 +58,13 @@ function playRound(playerSelection, computerSelection) {
     else if (computerSelection === "Scissors"){
         if (playerSelection === "rock") {
             let match = "The computer chooses " + computerSelection + ". You win!"
+            win += 1;
             return match;
         }
 
         else if (playerSelection === "paper") {
             let match = ("The computer chooses " + computerSelection + ". You lost!")
+            lose += 1;
             return match;
         }
 
@@ -78,3 +80,34 @@ function playRound(playerSelection, computerSelection) {
     }
 
 }
+
+function playGame() {
+
+    for (i = 1; i <= 5; i++) {
+        initialSelection = prompt("Rock, paper, or scissors?", "");
+        playerSelection = initialSelection.toLowerCase();
+        computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+        computerSelection = getComputerChoice();
+        initialSelection = undefined;
+    }
+
+    if (win > lose) {
+        return "You won the game!";
+    }
+
+    else if (lose > win) {
+        return "You lost the game!";
+    }
+
+    else {
+        return "You have a tie game!";
+    }
+
+}
+
+let win = 0; 
+let lose = 0;
+let initialSelection;
+let playerSelection;
+let computerSelection;
